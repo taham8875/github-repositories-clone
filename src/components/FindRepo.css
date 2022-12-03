@@ -1,0 +1,43 @@
+.repositories .find-repo {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #2d353e;
+}
+
+.repositories .filter-repo {
+  color: #c4cbd3;
+  padding: 7px 12px;
+  background-color: #161b22;
+  border: 1px solid #2d353e;
+  border-radius: 5px;
+  margin: 10px 7px;
+  font-weight: 500;
+}
+
+.repositories .filter-repo svg {
+  margin-left: 10px;
+}
+
+.repositories .new-repo {
+  color: white;
+  padding: 7px 12px;
+  background-color: #238636;
+  border: 1px solid #2d353e;
+  border-radius: 5px;
+  margin: 10px 7px;
+  font-weight: 500;
+}
+
+.repositories .new-repo svg {
+  margin-right: 7px;
+}
+
+.repositories input.search-repo {
+  padding: 8.25px 10px;
+  background-color: #0d1117;
+  border: 1px solid #2d353e;
+  border-radius: 6px;
+  color: white;
+  flex: 1;
+}

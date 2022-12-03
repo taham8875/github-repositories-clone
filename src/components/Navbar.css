@@ -1,0 +1,151 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #161b22;
+}
+
+.main-nav img {
+  height: 30px;
+  margin: 0px 15px;
+}
+
+.main-nav .notifications {
+  transform: scale(1.2);
+}
+
+.main-nav label {
+  position: relative;
+}
+
+.main-nav label input {
+  padding: 7px 10px;
+  width: 200px;
+  background-color: #0d1117;
+  border: 1px solid #2d353e;
+  border-radius: 6px;
+  color: white;
+  transition: all 0.2s linear;
+}
+
+.main-nav label input:focus {
+  outline: none;
+  width: 350px;
+}
+
+.main-nav label input:focus~span {
+  display: none;
+}
+
+.main-nav .more {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .more *:nth-child(1) {
+  padding-right: 4px;
+}
+
+.main-nav .more *:nth-child(2) {
+  padding-left: 3px;
+}
+
+.main-nav .photo-drop-down {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .photo-drop-down img {
+  border-radius: 50%;
+}
+
+.main-nav .photo-drop-down svg {
+  position: absolute;
+  right: -9px;
+}
+
+
+/* nav label input:hover {
+  width: 350px;
+  -webkit-transition: all-color 2s ease-out;
+  -moz-transition: all-color 2s ease-out;
+  -o-transition: all-color 2s ease-out;
+  transition: all-color 2s ease-out;
+} */
+
+.main-nav label input::placeholder {
+  color: #ababab;
+  font-weight: 100;
+}
+
+.main-nav label span {
+  color: #ababab;
+  font-weight: 100;
+  padding: 0 7px;
+  position: absolute;
+  border: 1px solid #2d353e;
+  border-radius: 6px;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-nav ul {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  margin-left: 15px;
+  font-weight: 600;
+}
+
+.main-nav svg {
+  padding: 10px;
+}
+
+.secondary-nav {
+  width: 100vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #2d353e;
+  background-color: #0d1117;
+  z-index: 100;
+}
+
+.secondary-nav ul {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  padding-left: calc(40% + 20px);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-weight: 100;
+}
+
+@media (min-width: 1200px) {
+  .secondary-nav ul {
+    padding-left: calc(30% + 20px);
+  }
+}
+
+.secondary-nav ul li.active {
+  position: relative;
+  font-weight: 400;
+}
+
+.secondary-nav ul li.active::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: 2px;
+  background-color: #b66250;
+}
+
+.secondary-nav ul svg {
+  color: rgba(255, 255, 255, 0.4);
+  padding-right: 10px;
+}
