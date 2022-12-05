@@ -13,14 +13,31 @@ import {
   faPlus,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserRepos, fetchUsers } from "../app/user/userSlice";
 
 export default function Navbar() {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  function handleKeyDown(event) {
+    console.log(user);
+    if (event.key === "Enter") {
+      dispatch(fetchUsers(event.target.value));
+      dispatch(fetchUserRepos(event.target.value));
+    }
+  }
   return (
     <>
       <nav className="main-nav">
         <img src={logo} alt="logo" className="logo" />
         <label>
-          <input id="search" type="text" placeholder="Enter username.." />
+          <input
+            id="search"
+            type="text"
+            placeholder="Enter username.."
+            onKeyDown={handleKeyDown}
+          />
           <span>/</span>
         </label>
         <ul>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./SideBar.css";
 import avatar from "../avatar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,17 +8,27 @@ import {
   faEnvelope,
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUsers } from "../app/user/userSlice";
 
 export default function Sidebar() {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+
+  console.log(user);
+
   return (
     <>
       <div className="sidebar">
         <div className="user-avatar">
-          <img src={avatar} alt="" srcset="" />
+          <img src={user.user.avatar_url} alt="" srcset="" />
           <FontAwesomeIcon icon={faFaceSmile}></FontAwesomeIcon>
         </div>
-        <h3>Taha Ahmed</h3>
-        <p className="username">taham8875</p>
+        <h3>{user.user.name}</h3>
+        <p className="username">{user.user.login}</p>
         <button>Edit profile</button>
         <div className="info">
           <p>
@@ -26,23 +36,29 @@ export default function Sidebar() {
               icon={faUserGroup}
               className="text-white-50"
             ></FontAwesomeIcon>
-            <span>15</span> <span className="text-white-50">followers</span> ·{" "}
-            <span>56</span> <span className="text-white-50">following</span>
+            <span>{user.user.followers}</span>{" "}
+            <span className="text-white-50">followers</span> ·{" "}
+            <span>{user.user.following}</span>{" "}
+            <span className="text-white-50">following</span>
           </p>
-          <p>
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className="text-white-50"
-            ></FontAwesomeIcon>
-            taha.m8875@gmail.com
-          </p>
-          <p>
-            <FontAwesomeIcon
-              icon={faLink}
-              className="text-white-50"
-            ></FontAwesomeIcon>
-            https://wa.me/qr/4JLCV7XFJFPPG1
-          </p>
+          {user.user.email && (
+            <p>
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                className="text-white-50"
+              ></FontAwesomeIcon>
+              {user.user.email}
+            </p>
+          )}
+          {user.user.blog && (
+            <p>
+              <FontAwesomeIcon
+                icon={faLink}
+                className="text-white-50"
+              ></FontAwesomeIcon>
+              {user.user.blog}
+            </p>
+          )}
         </div>
       </div>
     </>
