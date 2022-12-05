@@ -8,6 +8,22 @@
   position: relative;
 }
 
+@media (max-width: 992px) {
+  .sidebar .user-avatar {
+    max-width: 140px;
+  }
+  .sidebar .user-avatar-name-username {
+    margin-top: 65px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  .sidebar .user-name-username {
+    font-size: 1.3rem;
+  }
+}
+
 .sidebar .user-avatar img {
   width: 100%;
   border-radius: 50%;
@@ -25,6 +41,18 @@
   border: 1px solid #2d353e;
   border-radius: 50%;
   z-index: 1000;
+}
+
+@media (max-width: 992px) {
+  .sidebar .user-avatar svg {
+    font-size: 0.8rem;
+    right: 7px;
+    bottom: 7px;
+    padding: 7px;
+  }
+  .sidebar .user-avatar {
+    z-index: 0;
+  }
 }
 
 .sidebar h3 {

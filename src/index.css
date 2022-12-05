@@ -24,13 +24,6 @@ ul {
   margin-right: auto;
 }
 
-
-/* @media (min-width: 786px) {
-  .container {
-    width: 750px;
-  }
-} */
-
 @media (min-width: 992px) {
   .container {
     width: 970px;

@@ -1,5 +1,6 @@
 .repositories .find-repo {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding-bottom: 5px;
   border-bottom: 1px solid #2d353e;
@@ -29,6 +30,12 @@
   font-weight: 500;
 }
 
+@media (max-width: 992px) {
+  .repositories .new-repo {
+    width: 100%;
+  }
+}
+
 .repositories .new-repo svg {
   margin-right: 7px;
 }
@@ -40,4 +47,11 @@
   border-radius: 6px;
   color: white;
   flex: 1;
+}
+
+@media (max-width: 992px) {
+  .repositories .search-repo {
+    flex: none!important;
+    width: 100%;
+  }
 }

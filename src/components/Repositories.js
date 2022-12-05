@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Repositories.css";
 import RepoCard from "./RepoCard";
 import FindRepo from "./FindRepo";
@@ -11,15 +11,6 @@ export default function Repositories() {
   useEffect(() => {
     dispatch(fetchUserRepos());
   }, []);
-  console.log(Array.from(user.userRepos));
-
-  // const [userRepos, setUserRepos] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("https://api.github.com/users/taham8875/repos")
-  //     .then((response) => response.json())
-  //     .then((data) => setUserRepos(data));
-  // }, []);
 
   return (
     <>

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./SideBar.css";
-import avatar from "../avatar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFaceSmile,
@@ -18,17 +17,19 @@ export default function Sidebar() {
     dispatch(fetchUsers());
   }, []);
 
-  console.log(user);
-
   return (
     <>
       <div className="sidebar">
-        <div className="user-avatar">
-          <img src={user.user.avatar_url} alt="" srcset="" />
-          <FontAwesomeIcon icon={faFaceSmile}></FontAwesomeIcon>
+        <div className="user-avatar-name-username">
+          <div className="user-avatar">
+            <img src={user.user.avatar_url} alt="" srcset="" />
+            <FontAwesomeIcon icon={faFaceSmile}></FontAwesomeIcon>
+          </div>
+          <div className="user-name-username">
+            <h3>{user.user.name}</h3>
+            <p className="username">{user.user.login}</p>
+          </div>
         </div>
-        <h3>{user.user.name}</h3>
-        <p className="username">{user.user.login}</p>
         <button>Edit profile</button>
         <div className="info">
           <p>

@@ -5,14 +5,6 @@ import { faStar } from "@fortawesome/free-regular-svg-icons";
 import languagesColors from "../languagesColors.json";
 
 export default function RepoCard(props) {
-  // let taha = [];
-  // taha = props.user.map((element) => {
-  //   return element.name;
-  // });
-  // console.log(taha);
-  // // console.log("taha");
-  // // console.log(taha);
-
   return (
     <>
       <div className="repo-card">

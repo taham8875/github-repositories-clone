@@ -61,8 +61,5 @@ const userSlice = createSlice({
   },
 });
 
-// console.log("taha");
-// console.log(userSlice.reducer);
-
 export default userSlice.reducer;
 export const { setUser } = userSlice.actions;

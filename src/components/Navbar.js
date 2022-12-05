@@ -1,7 +1,6 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "../logo.png";
-import avatar from "../avatar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -21,7 +20,6 @@ export default function Navbar() {
   const dispatch = useDispatch();
 
   function handleKeyDown(event) {
-    console.log(user);
     if (event.key === "Enter") {
       dispatch(fetchUsers(event.target.value));
       dispatch(fetchUserRepos(event.target.value));
@@ -55,10 +53,12 @@ export default function Navbar() {
           <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
           <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
         </div>
-        <div className="photo-drop-down">
-          <img src={avatar} alt="avatar" />
-          <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
-        </div>
+        {user.user.avatar_url && (
+          <div className="photo-drop-down">
+            <img src={user.user.avatar_url} alt="avatar" />
+            <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
+          </div>
+        )}
       </nav>
       <nav className="secondary-nav">
         <div className="container">

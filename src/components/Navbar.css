@@ -3,6 +3,7 @@
   align-items: center;
   padding: 15px 25px;
   background-color: #161b22;
+  overflow-x: hidden;
 }
 
 .main-nav img {
@@ -65,15 +66,6 @@
   right: -9px;
 }
 
-
-/* nav label input:hover {
-  width: 350px;
-  -webkit-transition: all-color 2s ease-out;
-  -moz-transition: all-color 2s ease-out;
-  -o-transition: all-color 2s ease-out;
-  transition: all-color 2s ease-out;
-} */
-
 .main-nav label input::placeholder {
   color: #ababab;
   font-weight: 100;
@@ -99,12 +91,38 @@
   font-weight: 600;
 }
 
+@media (max-width:992px) {
+  .main-nav ul,
+  .main-nav .more,
+  .main-nav .photo-drop-down {
+    display: none;
+  }
+  .main-nav .notifications {
+    margin-left: auto;
+  }
+  .main-nav img {
+    order: 2;
+  }
+}
+
+@media (max-width:992px) {
+  .main-nav ul {
+    display: none;
+  }
+}
+
+@media (max-width:992px) {
+  .main-nav ul {
+    display: none;
+  }
+}
+
 .main-nav svg {
   padding: 10px;
 }
 
 .secondary-nav {
-  width: 100vw;
+  max-width: 100%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -122,11 +140,34 @@
   align-items: center;
   gap: 30px;
   font-weight: 100;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.secondary-nav ul::-webkit-scrollbar {
+  height: 6px;
+}
+
+.secondary-nav ul::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.secondary-nav ul li {
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 1200px) {
   .secondary-nav ul {
     padding-left: calc(30% + 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .secondary-nav ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
   }
 }
 

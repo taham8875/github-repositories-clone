@@ -9,3 +9,9 @@
     grid-template-columns: 30% 70%;
   }
 }
+
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: 100%;
+  }
+}
