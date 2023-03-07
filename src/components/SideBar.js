@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./SideBar.css";
+import logo from "../logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFaceSmile,
@@ -22,15 +23,17 @@ export default function Sidebar() {
       <div className="sidebar">
         <div className="user-avatar-name-username">
           <div className="user-avatar">
-            <img src={user.user.avatar_url} alt="" srcset="" />
+            <img src={user.user.avatar_url || logo} alt="" />
             <FontAwesomeIcon icon={faFaceSmile}></FontAwesomeIcon>
           </div>
           <div className="user-name-username">
             <h3>{user.user.name}</h3>
-            <p className="username">{user.user.login}</p>
+            <p className="username">
+              {user.user.login || "GitHub Repositories Clone"}
+            </p>
           </div>
         </div>
-        <button>Edit profile</button>
+        <button>Follow</button>
         <div className="info">
           <p>
             <FontAwesomeIcon
@@ -48,7 +51,7 @@ export default function Sidebar() {
                 icon={faEnvelope}
                 className="text-white-50"
               ></FontAwesomeIcon>
-              {user.user.email}
+              <span className="user-email">{user.user.email}</span>
             </p>
           )}
           {user.user.blog && (
@@ -57,7 +60,9 @@ export default function Sidebar() {
                 icon={faLink}
                 className="text-white-50"
               ></FontAwesomeIcon>
-              {user.user.blog}
+              <a href={user.user.blog} className="user-blog">
+                {user.user.blog}
+              </a>
             </p>
           )}
         </div>

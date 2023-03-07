@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Navbar.css";
-import logo from "../logo.png";
+import logo from "../logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -17,7 +17,19 @@ import { fetchUserRepos, fetchUsers } from "../app/user/userSlice";
 
 export default function Navbar() {
   const user = useSelector((state) => state.user);
+
   const dispatch = useDispatch();
+  const inputRef = useRef();
+
+  const keyUpHandler = (event) => {
+    if (event.key === "/") {
+      inputRef.current.focus();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keyup", keyUpHandler);
+  });
 
   function handleKeyDown(event) {
     if (event.key === "Enter") {
@@ -31,6 +43,7 @@ export default function Navbar() {
         <img src={logo} alt="logo" className="logo" />
         <label>
           <input
+            ref={inputRef}
             id="search"
             type="text"
             placeholder="Enter username.."
@@ -68,7 +81,12 @@ export default function Navbar() {
               Overview
             </li>
             <li className="active">
-              <FontAwesomeIcon icon={faBook}></FontAwesomeIcon> Repositories
+              <FontAwesomeIcon icon={faBook}></FontAwesomeIcon> Repositories{" "}
+              {user.userRepos.length ? (
+                <span className="numberOfRepositories">
+                  {user.userRepos.length}
+                </span>
+              ) : null}
             </li>
             <li>
               <FontAwesomeIcon icon={faProjectDiagram}></FontAwesomeIcon>

@@ -67,7 +67,7 @@
 }
 
 .sidebar button {
-  font-family: 'Segoe UI', 'Open Sans', sans-serif;
+  font-family: "Segoe UI", "Open Sans", sans-serif;
   display: block;
   background-color: #21262d;
   color: rgba(255, 255, 255, 0.9);
@@ -81,11 +81,6 @@
   border-radius: 5px;
 }
 
-
-/* .sidebar .info {
-  font-size: 0.7rem;
-} */
-
 .sidebar .info p {
   margin: 12px 0;
 }
@@ -97,4 +92,16 @@
 .sidebar .info svg {
   width: 30px;
   padding-right: 10px;
+}
+
+.user-email,
+.user-blog {
+  word-break: break-all;
+  color: inherit;
+  text-decoration: inherit;
+}
+.user-email:hover,
+.user-blog:hover {
+  color: #56a3fb;
+  text-decoration: underline;
 }

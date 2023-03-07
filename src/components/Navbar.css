@@ -34,7 +34,7 @@
   width: 350px;
 }
 
-.main-nav label input:focus~span {
+.main-nav label input:focus ~ span {
   display: none;
 }
 
@@ -91,7 +91,7 @@
   font-weight: 600;
 }
 
-@media (max-width:992px) {
+@media (max-width: 992px) {
   .main-nav ul,
   .main-nav .more,
   .main-nav .photo-drop-down {
@@ -105,13 +105,13 @@
   }
 }
 
-@media (max-width:992px) {
+@media (max-width: 992px) {
   .main-nav ul {
     display: none;
   }
 }
 
-@media (max-width:992px) {
+@media (max-width: 992px) {
   .main-nav ul {
     display: none;
   }
@@ -145,7 +145,7 @@
 }
 
 .secondary-nav ul::-webkit-scrollbar {
-  height: 6px;
+  height: 3px;
 }
 
 .secondary-nav ul::-webkit-scrollbar-thumb {
@@ -179,7 +179,7 @@
 .secondary-nav ul li.active::before {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: -5px;
   left: -5px;
   width: calc(100% + 10px);
   height: 2px;
@@ -189,4 +189,15 @@
 .secondary-nav ul svg {
   color: rgba(255, 255, 255, 0.4);
   padding-right: 10px;
+}
+
+.numberOfRepositories {
+  background-color: rgba(110, 118, 129, 0.4);
+  border-radius: 2em;
+  font-size: 12px;
+  font-weight: normal;
+  min-width: var(--base-size-20, 20px);
+  padding: 0 6px;
+  text-align: center;
+  margin-left: 5px;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../logo.png";
+import logo from "../logo.svg";
 import "./Footer.css";
 
 export default function Footer() {
@@ -7,7 +7,7 @@ export default function Footer() {
     <footer>
       <div className="container">
         <div className="info">
-          <img src={logo} alt="logo" srcset="" />
+          <img src={logo} alt="logo" />
           &#169; 2022 GitHub, Inc.
         </div>
         <div className="links">

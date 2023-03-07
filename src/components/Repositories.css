@@ -1,0 +1,22 @@
+.slash {
+  color: #ababab;
+  font-weight: 100;
+  padding: 2px 7px;
+  border: 1.5px solid #2d353e;
+  border-radius: 6px;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sayHi {
+  font-weight: 100;
+  text-align: center;
+  font-size: 2rem;
+  margin: auto;
+  opacity: 0.7;
+}
+
+.sayHi > div {
+  margin-bottom: 50px;
+}
